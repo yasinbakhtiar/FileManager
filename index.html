@@ -1,0 +1,141 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>File Manager</title>
+		<link rel = "shortcut icon" href = "images/icon.png" />	
+		
+		<!-- JQuery & Bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+		
+		<style>
+			.root
+			{
+				width:80%;
+				background-color: rgb(250,250,250);
+				text-align: left;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;				
+			}
+			p
+			{
+				font-size:30px;
+			}
+			.item:hover
+			{
+				background-color: rgb(230,230,230);
+			}
+			.item
+			{
+				text-align: center;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- menu -->
+		<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #00c7c4;">
+			<div class="container-fluid">
+				<a class="navbar-brand" >
+					<img src="images/icon.png" alt="" width="30" height="24">
+				</a>
+				<a class="navbar-brand" href="" >File Manager</a>
+				
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					    <li class="nav-item">
+							<a class="nav-link active" aria-current="page" target = "blank" href="https://github.com/yasinbakhtiar">About</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						    Views
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="index_2.html">Details</a></li>
+								<li><a class="dropdown-item" href="">Tiles</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form class="d-flex">
+						<input class="form-control" id="myInput" type="text" placeholder="Search..">
+					</form>
+				</div>
+			</div>
+		</nav>
+		
+		<!--grid-->
+		<br>
+		<h3 style="text-align: center;">Address: C:\Users\xy\File Manager</h3><br>
+		
+		<div class="root container" id= "all">
+			<div class="row">
+				<div class = "item col-sm" onclick = "link_1()">
+					<br>
+					<img src = "images/Tiles/json.png"></img>
+					<p>a</p>
+				</div>
+				<div class = "item col-sm" onclick = "link_2()">
+					<br>
+					<img src = "images/Tiles/cpp.png"></img>
+					<p>b</p>
+				</div>
+				<div class = "item col-sm" onclick = "link_3()">
+					<br>
+					<img src = "images/Tiles/pdf.png"></img>
+					<p>c</p>
+				</div>
+				<div class = "item col-sm" onclick = "link_4()">
+					<br>
+					<img src = "images/Tiles/svg.png"></img>
+					<p>d</p>
+				</div>
+				<div class = "item col-sm" onclick = "link_5()">
+					<br>
+					<img src = "images/Tiles/css.png"></img>
+					<p>e</p>
+				</div>
+				<div class = "item col-sm" onclick = "link_6()">
+					<br>
+					<img src = "images/Tiles/js.png"></img>
+					<p>f</p>
+				</div>
+				<div class = "item col-sm" onclick = "link_7()">
+					<br>
+					<img src = "images/Tiles/txt.png"></img>
+					<p>g</p>
+				</div>
+				<div class = "item col-sm" onclick = "link_8()">
+					<br>
+					<img src = "images/Tiles/zip.png"></img>
+					<p>h</p>
+				</div>
+				<div class = "item col-sm" onclick = "link_9()">
+					<br>
+					<img src = "images/Tiles/python.png"></img>
+					<p>i</p>
+				</div>
+			</div>
+		</div>
+		<script>
+		$(document).ready(function(){
+			$("#myInput").on("keyup", function() {
+				var value = $(this).val().toLowerCase();
+				$("#all div").filter(function() {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			});
+		});
+		</script>
+	</body>
+</html>
