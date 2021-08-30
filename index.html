@@ -77,7 +77,8 @@
 		<!--grid-->
 		<br>
 		<h3 style="text-align: center;">Address: C:\Users\xy\File Manager</h3><br>
-		
+		<button type="button" style="  display: block; margin-left: auto; margin-right: auto;" onclick="back()" class="btn btn-primary">back</button>
+		<br>
 		<div class="root container" id= "all">
 			<div class="row">
 				<div class = "item col-sm" onclick = "link_1()">
@@ -136,6 +137,10 @@
 				});
 			});
 		});
+		function back()
+		{
+			window.open("./..","_self");
+		}
 		</script>
 	</body>
 </html>
