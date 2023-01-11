@@ -7,9 +7,16 @@ It 's very simple and easy to use! just run index.html with your browser!
 ## Example
 [This page](http://webpages.iust.ac.ir/morteza_zakeri/repo/iust_course_materials/) made with File Manager.
 
+
+## New version available!
+File manager updated to version 1.1.0! 
+Changes:
+1. Light/Dark mode added
+2. UI updated
+3. bootstrap updated (version 5.3)
+
 ## Suggestions for developers
 You can add items into this template. for example:
 1. Create better search bar.
-2. Dark/Light mode button
-3. Add other views
-4. Add icons
+2. Add other views
+3. Add icons

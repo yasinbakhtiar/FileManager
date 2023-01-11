@@ -1,4 +1,4 @@
-<html>
+<html  id="color-mode" data-bs-theme="light">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -6,9 +6,10 @@
 		<link rel = "shortcut icon" href = "images/icon.png" />	
 		
 		<!-- JQuery & Bootstrap -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 		
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,16 +27,21 @@
 			}
 			p
 			{
-				font-size:30px;
+				font-size:20px;
 			}
 			.item:hover
 			{
-				background-color: rgb(230,230,230);
+				background-color: rgb(130,130,130);
 			}
 			.item
 			{
+				border-radius: 10px;
 				text-align: center;
 				cursor: pointer;
+			}
+			.item img{
+				width: 70px;
+				height: 70px;
 			}
 		</style>
 	</head>
@@ -46,7 +52,7 @@
 				<a class="navbar-brand" >
 					<img src="images/icon.png" alt="" width="30" height="24">
 				</a>
-				<a class="navbar-brand" href="" >File Manager</a>
+				<a class="navbar-brand" href="" style="color:black;">File Manager</a>
 				
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -55,16 +61,20 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					    <li class="nav-item">
-							<a class="nav-link active" aria-current="page" target = "blank" href="https://github.com/yasinbakhtiar">About</a>
+							<a class="nav-link active" aria-current="page" target = "blank" href="https://github.com/yasinbakhtiar/FileManager"  style="color:black;">About</a>
 						</li>
+						
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black;">
 						    Views
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<li><a class="dropdown-item" href="index_2.html">Details</a></li>
 								<li><a class="dropdown-item" href="">Tiles</a></li>
 							</ul>
+						</li>
+						<li class="nav-item">
+							<button type="button" id="color-mode-button" style="display: block;" onclick="change()" class="btn btn-outline-secondary"><img width="22" height="22" src="images/brightness.png"/></button>
 						</li>
 					</ul>
 					<form class="d-flex">
@@ -76,8 +86,8 @@
 		
 		<!--grid-->
 		<br>
-		<h3 style="text-align: center;">Address: C:\Users\xy\File Manager</h3><br>
-		<button type="button" style="  display: block; margin-left: auto; margin-right: auto;" onclick="back()" class="btn btn-primary">back</button>
+		<h5 style="text-align: left; margin-left: 10%;">Address: C:\Users\xy\File Manager</h5>
+		<button type="button" style="  display: block; margin-left: 10%;" onclick="back()" class="btn btn-primary">Back</button>
 		<br>
 		<div class="root container" id= "all">
 			<div class="row">
@@ -129,6 +139,7 @@
 			</div>
 		</div>
 		<script>
+		color = "light"
 		$(document).ready(function(){
 			$("#myInput").on("keyup", function() {
 				var value = $(this).val().toLowerCase();
@@ -137,9 +148,29 @@
 				});
 			});
 		});
+		
+		
 		function back()
 		{
 			window.open("./..","_self");
+		}
+		
+		function change(){
+			if (color == "light"){
+				color = "dark";
+				document.getElementById("color-mode").setAttribute("data-bs-theme","dark");	
+				document.getElementById("color-mode-button").setAttribute("class","btn btn-outline-light");
+				
+				document.querySelector('.root').style.backgroundColor = "rgb(40,40,40)";
+			}
+			
+			else{
+				color = "light";
+				document.getElementById("color-mode").setAttribute("data-bs-theme","light");
+				document.getElementById("color-mode-button").setAttribute("class","btn btn-outline-secondary");
+				
+				document.querySelector('.root').style.backgroundColor = "rgb(250,250,250)";
+			}
 		}
 		</script>
 	</body>
