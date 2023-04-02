@@ -14,21 +14,38 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		
+		<!-- Animate.css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+		
 		<style>
+			body{
+                animation: fadeIn;
+                animation-duration: 1.5s;
+            }
 			tr{
 				cursor: pointer;
 			}
 			td{
 				font-size: 20px;
 			}
+			.address-box{
+				display: flex;
+				border-style: solid;
+				border-width: 2px;
+			    border-radius: 10px;
+				margin-left:5% ;
+				margin-right: 5%;
+				padding: 10px;
+				border-color:gray;
+			}
 		</style>
 	</head>
 	<body>
 		<!-- menu -->
-		<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #00c7c4;">
+		<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #00b7ff;">
 			<div class="container-fluid">
 				<a class="navbar-brand" >
-					<img src="images/icon.png" alt="" width="30" height="24">
+					<img src="images/icon.png" alt="" width="40" height="32">
 				</a>
 				<a class="navbar-brand" href="" style="color:black;">File Manager</a>
 				
@@ -46,13 +63,13 @@
 						    Views
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="">Details</a></li>
+								<li><a class="dropdown-item">Details</a></li>
 								<li><a class="dropdown-item" href="index.html">Tiles</a></li>
 							</ul>
 						</li>
 						
 						<li class="nav-item">
-							<button type="button" id="color-mode-button" style="display: block;" onclick="change()" class="btn btn-outline-secondary"><img width="22" height="22" src="images/brightness.png"/></button>
+							<button type="button" id="color-mode-button" style="display: block;" onclick="change()" class="btn btn-outline-secondary"><img width="32" height="32" src="images/brightness.png"/></button>
 						</li>
 					</ul>
 					
@@ -62,164 +79,150 @@
 				</div>
 			</div>
 		</nav>
-		<!--grid-->
+		
 		<br>
-		<h5 style="text-align: left; margin-left: 10%;">Address: C:\Users\xy\File Manager</h5>
-		<button type="button" style="  display: block; margin-left: 10%;" onclick="back()" class="btn btn-primary">Back</button>
+		<!--Adrress-->
+		<div class="address-box">
+			<button type="button" style="margin-right: 20px;" onclick="back()" class="btn btn-primary">Back</button>
+			<h5 style="text-align: left; margin-top: auto; margin-bottom: auto;">Address: C:\Users\xy\File Manager</h5>
+		</div>
+
+		<br>
+		<!--grid-->
 		<table class="table  table-hover" style= "font-family: 'Ubuntu', sans-serif; font-size: 25px; width:80%;    margin-left: auto; margin-right: auto; text-align: center;">
 			<thead>
 				<tr>
-					<th scope="col">Icon</th>
 					<th scope="col">Name</th>
 					<th scope="col">Type</th>
 					<th scope="col">Date</th>
-					<th scope="col">Size</th>
+					<th scope="col">Info</th>
 				</tr>
 			</thead>
 			<tbody id="myTable">
 				<tr onclick = "link_1()">
-					<td><img src = "images/details/pdf.png"></td>
-					<td>a</td>
+					<td><img src = "images/details/pdf.png">&nbsp;a</td>
 					<td>Pdf</td>
 					<td>2021</td>
-					<td>1 KB</td>
+					<td>
+						1 KB
+					</td>
 				</tr>
 				<tr onclick = "link_2()">
-					<td><img src = "images/details/doc.png"></img></td>
-					<td>b</td>
+					<td><img src = "images/details/doc.png">&nbsp;b</td>
 					<td>Docx</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_3()">
-					<td><img src = "images/details/txt.png"></img></td>
-					<td>c</td>
+					<td><img src = "images/details/txt.png">&nbsp;c</td>
 					<td>Txt</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_4()">
-					<td><img src = "images/details/png.png"></img></td>
-					<td>d</td>
+					<td><img src = "images/details/png.png">&nbsp;d</td>
 					<td>Png</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_5()">
-					<td><img src = "images/details/json.png"></img></td>
-					<td>e</td>
+					<td><img src = "images/details/json.png">&nbsp;e</td>
 					<td>Json</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_6()">
-					<td><img src = "images/details/python.png"></img></td>
-					<td>f</td>
+					<td><img src = "images/details/python.png">&nbsp;f</td>
 					<td>Py</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_7()">
-					<td><img src = "images/details/xls.png"></img></td>
-					<td>g</td>
+					<td><img src = "images/details/xls.png">&nbsp;g</td>
 					<td>Xlsx</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_8()">
-					<td><img src = "images/details/java.png"></img></td>
-					<td>h</td>
+					<td><img src = "images/details/java.png">&nbsp;h</td>
 					<td>Java</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_9()">
-					<td><img src = "images/details/exe.png"></img></td>
-					<td>i</td>
+					<td><img src = "images/details/exe.png">&nbsp;i</td>
 					<td>Exe</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_10()">
-					<td><img src = "images/details/js.png"></img></td>
-					<td>j</td>
+					<td><img src = "images/details/js.png">&nbsp;j</td>
 					<td>Java Script</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_11()">
-					<td><img src = "images/details/ai.png"></img></td>
-					<td>k</td>
+					<td><img src = "images/details/ai.png">&nbsp;k</td>
 					<td>Ai</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_12()">
-					<td><img src = "images/details/folder.png"></img></td>
-					<td>l</td>
+					<td><img src = "images/details/folder.png">&nbsp;l</td>
 					<td>Folder</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_13()">
-					<td><img src = "images/details/css.png"></img></td>
-					<td>m</td>
+					<td><img src = "images/details/css.png">&nbsp;m</td>
 					<td>Css</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_14()">
-					<td><img src = "images/details/apk.png"></img></td>
-					<td>n</td>
+					<td><img src = "images/details/apk.png">&nbsp;n</td>
 					<td>Apk</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_15()">
-					<td><img src = "images/details/cpp.png"></img></td>
-					<td>o</td>
+					<td><img src = "images/details/cpp.png">&nbsp;o</td>
 					<td>Cpp</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_16()">
-					<td><img src = "images/details/cs.png"></img></td>
-					<td>p</td>
+					<td><img src = "images/details/cs.png">&nbsp;p</td>
 					<td>Cs</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_17()">
-					<td><img src = "images/details/html.png"></img></td>
-					<td>q</td>
+					<td><img src = "images/details/html.png">&nbsp;q</td>
 					<td>Html</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_18()">
-					<td><img src = "images/details/psd.png"></img></td>
-					<td>r</td>
+					<td><img src = "images/details/psd.png">&nbsp;r</td>
 					<td>Psd</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_19()">
-					<td><img src = "images/details/mp4.png"></img></td>
-					<td>s</td>
+					<td><img src = "images/details/mp4.png">&nbsp;s</td>
 					<td>Mp4</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_20()">
-					<td><img src = "images/details/xml.png"></img></td>
-					<td>t</td>
+					<td><img src = "images/details/xml.png">&nbsp;t</td>
 					<td>Xml</td>
 					<td>2021</td>
 					<td>1 KB</td>
 				</tr>
 				<tr onclick = "link_21()">
-					<td><img src = "images/details/file.png"></img></td>
-					<td>u</td>
+					<td><img src = "images/details/file.png">&nbsp;u</td>
 					<td>Other</td>
 					<td>2021</td>
 					<td>1 KB</td>

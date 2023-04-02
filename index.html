@@ -8,14 +8,20 @@
 		<!-- JQuery & Bootstrap -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		
+		<!-- Animate.css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 		
 		<style>
+		    body{
+                animation: fadeIn;
+                animation-duration: 1.5s;
+            }
 			.root
 			{
 				width:80%;
@@ -43,14 +49,24 @@
 				width: 70px;
 				height: 70px;
 			}
+			.address-box{
+				display: flex;
+				border-style: solid;
+				border-width: 2px;
+			    border-radius: 10px;
+				margin-left:5% ;
+				margin-right: 5%;
+				padding: 10px;
+				border-color: darkgrey;
+			}
 		</style>
 	</head>
 	<body>
 		<!-- menu -->
-		<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #00c7c4;">
+		<nav class="navbar navbar-expand-lg navbar-light" style = "background-color: #00b7ff;">
 			<div class="container-fluid">
 				<a class="navbar-brand" >
-					<img src="images/icon.png" alt="" width="30" height="24">
+					<img src="images/icon.png" alt="" width="40" height="32">
 				</a>
 				<a class="navbar-brand" href="" style="color:black;">File Manager</a>
 				
@@ -70,11 +86,11 @@
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<li><a class="dropdown-item" href="index_2.html">Details</a></li>
-								<li><a class="dropdown-item" href="">Tiles</a></li>
+								<li><a class="dropdown-item">Tiles</a></li>
 							</ul>
 						</li>
 						<li class="nav-item">
-							<button type="button" id="color-mode-button" style="display: block;" onclick="change()" class="btn btn-outline-secondary"><img width="22" height="22" src="images/brightness.png"/></button>
+							<button type="button" id="color-mode-button" style="display: block;" onclick="change()" class="btn btn-outline-secondary"><img width="32" height="32" src="images/brightness.png"/></button>
 						</li>
 					</ul>
 					<form class="d-flex">
@@ -84,11 +100,16 @@
 			</div>
 		</nav>
 		
+		<br>
+
+		<!--Adrress-->
+		<div class="address-box">
+			<button type="button" style="margin-right: 20px;" onclick="back()" class="btn btn-primary">Back</button>
+			<h5 style="text-align: left; margin-top: auto; margin-bottom: auto;">Address: C:\Users\xy\File Manager</h5>
+		</div>
+		<br>
+
 		<!--grid-->
-		<br>
-		<h5 style="text-align: left; margin-left: 10%;">Address: C:\Users\xy\File Manager</h5>
-		<button type="button" style="  display: block; margin-left: 10%;" onclick="back()" class="btn btn-primary">Back</button>
-		<br>
 		<div class="root container" id= "all">
 			<div class="row">
 				<div class = "item col-sm" onclick = "link_1()">
